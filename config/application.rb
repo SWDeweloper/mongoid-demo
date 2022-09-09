@@ -20,6 +20,8 @@ Bundler.require(*Rails.groups)
 
 module MongoidDemo
   class Application < Rails::Application
+    config.mongoid.logger = Logger.new(STDERR, :warn)
+    config.mongoid.preload_models = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
